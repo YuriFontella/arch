@@ -1,6 +1,13 @@
 #!/bin/sh
 
-## CONFIGURAÇÃO
+## REFLECTOR
+
+pacman -Sy
+pacman -S reflector -y
+
+reflector --score 5 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+
+# CONFIGURAÇÃO
 
 touch /etc/hostname
 echo "emcasadormindo" > /etc/hostname
