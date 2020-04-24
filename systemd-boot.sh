@@ -4,22 +4,22 @@
 
 bootctl install
 
-touch /boot/loader.conf
+touch /boot/EFI/loader.conf
 
-cat <<EOF > /boot/loader.conf
+cat <<EOF > /boot/EFI/loader.conf
 default arch
 timeout 2
 editor 1
 console-mode max
 EOF
 
-touch /boot/entries/arch.conf
+touch /boot/EFI/entries/arch.conf
 
-cat <<EOF > /boot/entries/arch.conf
+cat <<EOF > /boot/EFI/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=/dev/sda2 quiet splash loglevel=3
+options root=/dev/sda3 quiet splash loglevel=3
 EOF
 
 ## REFLECTOR
@@ -56,11 +56,11 @@ timedatectl set-ntp true
 
 # DESKTOP
 
-pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
+pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate firefox firefox-i18n-pt-br xdg-user-dirs sudo --noconfirm
 
 # BLUETOOTH
 
-pacman -S bluez pulseaudio-bluetooth
+pacman -S bluez pulseaudio-bluetooth --noconfirm
 
 # SERVIÇOS
 
