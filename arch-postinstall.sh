@@ -36,10 +36,15 @@ timedatectl set-ntp true
 
 pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
 
+# BLUETOOTH
+
+pacman -S bluez pulseaudio-bluetooth
+
 # SERVIÇOS
 
 systemctl enable sddm
 systemctl enable NetworkManager
+systemctl enable bluetooth
 
 # GRUB
 
@@ -47,6 +52,10 @@ pacman -S grub --noconfirm
 
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# DRIVERS
+
+pacman -S intel-ucode xf86-video-intel xf86-video-amdgpu libva-intel-driver libva-mesa-driver vulkan-intel vulkan-radeon --noconfirm
 
 # USUÁRIO
 
