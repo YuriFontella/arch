@@ -34,7 +34,7 @@ timedatectl set-ntp true
 
 # DESKTOP
 
-pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
+pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
 
 # BLUETOOTH
 
