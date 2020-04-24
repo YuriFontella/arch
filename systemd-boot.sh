@@ -80,3 +80,6 @@ echo -e "yuri\nyuri" | passwd
 echo -e "yuri\nyuri" | passwd yuri
 
 sed -i -- 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
+
+cd ..
+rm -rf arch
