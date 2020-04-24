@@ -4,18 +4,16 @@
 
 bootctl install
 
-touch /boot/EFI/loader.conf
-
-cat <<EOF > /boot/EFI/loader.conf
+cat <<EOF > /boot/loader/loader.conf
 default arch
 timeout 2
 editor 1
 console-mode max
 EOF
 
-touch /boot/EFI/entries/arch.conf
+touch /boot/loader/entries/arch.conf
 
-cat <<EOF > /boot/EFI/entries/arch.conf
+cat <<EOF > /boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
