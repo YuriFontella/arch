@@ -56,6 +56,8 @@ timedatectl set-ntp true
 
 pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate firefox firefox-i18n-pt-br xdg-user-dirs sudo --noconfirm
 
+sddm-greeter --theme /usr/share/sddm/themes/breeze
+
 # BLUETOOTH
 
 pacman -S bluez pulseaudio-bluetooth --noconfirm
@@ -68,7 +70,7 @@ systemctl enable bluetooth
 
 # DRIVERS
 
-# pacman -S intel-ucode xf86-video-intel xf86-video-amdgpu libva-intel-driver libva-mesa-driver vulkan-intel vulkan-radeon --noconfirm
+pacman -S intel-ucode xf86-video-intel xf86-video-amdgpu libva-intel-driver libva-mesa-driver vulkan-intel vulkan-radeon --noconfirm
 
 # USUÁRIO
 
