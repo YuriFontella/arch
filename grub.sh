@@ -57,7 +57,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # DRIVERS
 
-pacman -S intel-ucode xf86-video-intel xf86-video-amdgpu libva-intel-driver libva-mesa-driver vulkan-intel vulkan-radeon --noconfirm
+pacman -S intel-ucode mesa libva-intel-driver libva-mesa-driver vulkan-intel --noconfirm
 
 # USUÁRIO
 
