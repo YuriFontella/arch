@@ -34,7 +34,7 @@ timedatectl set-ntp true
 
 # DESKTOP
 
-pacman -S deepin deepin-extra lightdm firefox firefox-i18n-pt-br xdg-user-dirs sudo --noconfirm
+pacman -S deepin deepin-extra lightdm firefox firefox-i18n-pt-br xdg-user-dirs sudo networkmanager --noconfirm
 
 # BLUETOOTH
 
@@ -54,7 +54,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # XORG
-pacman -S xorg-server
+pacman -S xorg-server --noconfirm
 
 # DRIVERS
 
