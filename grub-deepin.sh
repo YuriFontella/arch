@@ -53,6 +53,9 @@ pacman -S grub --noconfirm
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
+# XORG
+pacman -S xorg-server
+
 # DRIVERS
 
 pacman -S intel-ucode mesa libva-intel-driver libva-mesa-driver vulkan-intel --noconfirm
