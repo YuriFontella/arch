@@ -61,7 +61,7 @@ pacman -S intel-ucode mesa libva-intel-driver libva-mesa-driver vulkan-intel --n
 
 # USUÁRIO
 
-useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
+useradd -m -g users -G wheel,storage,power,network,video -s /bin/bash yuri
 
 echo -e "yuri\nyuri" | passwd
 echo -e "yuri\nyuri" | passwd yuri
