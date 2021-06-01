@@ -58,11 +58,11 @@ pacman -S xorg-server xorg-xrandr xorg-xinput xorg-xinit xorg-xclock xorg-xbackl
 
 pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate breeze breeze-icons firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
 
-pacman -S colord colord-kde fuse ntfs-3g sudo --noconfirm
+pacman -S colord colord-kde fuse ntfs-3g fstrm sudo --noconfirm
 
 pacman -S linux-headers --noconfirm
 
-# FONTS
+# FONTES
 
 pacman -S ttf-dejavu ttf-liberation --noconfirm
 
@@ -77,6 +77,7 @@ pacman -S bluez pulseaudio-bluetooth --noconfirm
 systemctl enable sddm
 systemctl enable NetworkManager
 systemctl enable bluetooth
+systemctl enable fstrim.timer
 
 # DRIVERS
 
