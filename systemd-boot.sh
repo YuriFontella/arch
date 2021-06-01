@@ -56,7 +56,7 @@ timedatectl set-ntp true
 
 pacman -S xorg-server xorg-xrandr xorg-xinput xorg-xinit xorg-xclock xorg-xbacklight --noconfirm 
 
-pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
+pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate breeze breeze-icons firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
 
 pacman -S colord colord-kde fuse ntfs-3g sudo --noconfirm
 
@@ -78,7 +78,7 @@ systemctl enable bluetooth
 
 # DRIVERS
 
-pacman -S intel-ucode xf86-video-intel libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-radeon vulkan-tools gst-libav --noconfirm
+pacman -S intel-ucode xf86-video-intel libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-radeon vulkan-tools xf86-input-libinput gst-libav --noconfirm
 
 touch /etc/X11/xorg.conf.d/20-intel.conf
 
