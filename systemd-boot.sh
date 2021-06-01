@@ -56,7 +56,9 @@ timedatectl set-ntp true
 
 pacman -S xorg-server xorg-xrandr xorg-xinput xorg-xinit xorg-xclock xorg-xbacklight --noconfirm 
 
-pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate firefox firefox-i18n-pt-br xdg-user-dirs colord colord-kde sudo --noconfirm
+pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
+
+pacman -S colord colord-kde fuse ntfs-3g sudo --noconfirm
 
 # FONTS
 
