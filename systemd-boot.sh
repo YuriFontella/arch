@@ -60,6 +60,8 @@ pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview 
 
 pacman -S colord colord-kde fuse ntfs-3g sudo --noconfirm
 
+pacman -S linux-headers --noconfirm
+
 # FONTS
 
 pacman -S ttf-dejavu ttf-liberation --noconfirm
@@ -90,6 +92,10 @@ Section "Device"
    Option "TearFree" "true"
 EndSection
 EOF
+
+# Kernel initrd
+
+mkinitcpio -P
 
 # USUÁRIO
 
