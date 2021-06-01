@@ -54,9 +54,15 @@ timedatectl set-ntp true
 
 # DESKTOP
 
-pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate firefox firefox-i18n-pt-br xdg-user-dirs sudo --noconfirm
+pacman -S xorg-server xorg-xrandr xorg-xinput xorg-xinit xorg-xclock xorg-xbacklight --noconfirm 
 
-sddm-greeter --theme /usr/share/sddm/themes/breeze
+pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate firefox firefox-i18n-pt-br xdg-user-dirs colord colord-kde sudo --noconfirm
+
+# FONTS
+
+pacman -S ttf-dejavu ttf-liberation --noconfirm
+
+sddm-greeter --theme /usr/share/sddm/themes/Breeze
 
 # BLUETOOTH
 
@@ -70,7 +76,18 @@ systemctl enable bluetooth
 
 # DRIVERS
 
-pacman -S intel-ucode xf86-video-intel xf86-video-amdgpu libva-intel-driver libva-mesa-driver vulkan-intel vulkan-radeon --noconfirm
+pacman -S intel-ucode xf86-video-intel libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-radeon vulkan-tools gst-libav --noconfirm
+
+touch /etc/X11/xorg.conf.d/20-intel.conf
+
+cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
+Section "Device"
+   Identifier "Intel Graphics"
+   Driver "intel"
+   Option "DRI" "3"
+   Option "TearFree" "true"
+EndSection
+EOF
 
 # USUÁRIO
 
@@ -81,5 +98,4 @@ echo -e "yuri\nyuri" | passwd yuri
 
 sed -i -- 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
 
-cd ..
-rm -rf arch
+cd .. && rm -rf arch
