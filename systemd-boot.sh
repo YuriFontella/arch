@@ -58,7 +58,7 @@ pacman -S xorg-server xorg-xrandr xorg-xinput xorg-xinit xorg-xclock xorg-xbackl
 
 pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate breeze breeze-icons firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
 
-pacman -S colord colord-kde fuse ntfs-3g fstrm sudo --noconfirm
+pacman -S colord colord-kde fuse ntfs-3g fstrm packagekit-qt5 sudo --noconfirm
 
 pacman -S linux-headers --noconfirm
 
