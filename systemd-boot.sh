@@ -94,7 +94,7 @@ Section "Device"
 EndSection
 EOF
 
-# Kernel initrd
+# KERNEL INITRD
 
 mkinitcpio -P
 
