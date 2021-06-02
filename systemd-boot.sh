@@ -54,7 +54,7 @@ timedatectl set-ntp true
 
 # DESKTOP
 
-pacman -S xorg-server xorg-xrandr xorg-xinput xorg-xinit xorg-xclock xorg-xbacklight --noconfirm 
+pacman -S xorg-server xorg-xrandr xorg-xinput xorg-xinit xorg-xclock xorg-xbacklight xorg-xrdb --noconfirm 
 
 pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate ktorrent partitionmanager breeze breeze-icons firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
 
@@ -106,6 +106,15 @@ useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
 touch ~/.xinitrc
 
 echo "exec startplasma-x11" > ~/.xinitrc
+
+touch /etc/X11/xinit/Xresources
+
+cat <<EOF > /etc/X11/xinit/Xresources
+Xft.dpi: 96
+
+Xft.hintstyle: hintmedium
+Xft.hinting: true
+EOF
 
 echo -e "yuri\nyuri" | passwd
 echo -e "yuri\nyuri" | passwd yuri
