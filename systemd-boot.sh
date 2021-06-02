@@ -68,8 +68,6 @@ pacman -S linux-headers --noconfirm
 
 pacman -S ttf-dejavu ttf-liberation --noconfirm
 
-sddm-greeter --theme /usr/share/sddm/themes/Breeze
-
 # BLUETOOTH
 
 pacman -S bluez pulseaudio-bluetooth --noconfirm
@@ -118,13 +116,16 @@ Xft.hintstyle: hintmedium
 Xft.hinting: true
 EOF
 
-# TEMA 
+# TEMA
+
+sddm-greeter --theme /usr/share/sddm/themes
 
 cat <<EOF > /etc/sddm.conf
 [General]
 EnableHiDPI=false
 
 [Theme]
+Current=breeze
 CursorTheme=breeze_cursors
 EOF
 
