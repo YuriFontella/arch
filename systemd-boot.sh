@@ -56,7 +56,7 @@ timedatectl set-ntp true
 
 pacman -S xorg-server xorg-xrandr xorg-xinput xorg-xinit xorg-xclock xorg-xbacklight --noconfirm 
 
-pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate breeze breeze-icons firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
+pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate ktorrent partitionmanager breeze breeze-icons firefox firefox-i18n-pt-br xdg-user-dirs --noconfirm
 
 pacman -S colord colord-kde fuse ntfs-3g fstrm packagekit-qt5 sudo --noconfirm
 
@@ -89,7 +89,6 @@ cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
 Section "Device"
    Identifier "Intel Graphics"
    Driver "intel"
-   Option "DRI" "3"
    Option "TearFree" "true"
 EndSection
 EOF
