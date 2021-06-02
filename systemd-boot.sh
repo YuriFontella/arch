@@ -102,6 +102,12 @@ mkinitcpio -P
 
 useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
 
+# XINIT
+
+touch ~/.xinitrc
+
+echo "exec startplasma-x11" > ~/.xinitrc
+
 echo -e "yuri\nyuri" | passwd
 echo -e "yuri\nyuri" | passwd yuri
 
