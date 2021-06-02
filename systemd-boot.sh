@@ -107,9 +107,9 @@ touch ~/.xinitrc
 
 echo "exec startplasma-x11" > ~/.xinitrc
 
-touch /etc/X11/xinit/Xresources
+touch ~/.Xresources
 
-cat <<EOF > /etc/X11/xinit/Xresources
+cat <<EOF > ~/.Xresources
 Xft.dpi: 96
 
 Xft.hintstyle: hintmedium
