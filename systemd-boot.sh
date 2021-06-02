@@ -101,11 +101,7 @@ mkinitcpio -P
 
 useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
 
-# XINIT
-
-touch ~/.xinitrc
-
-echo "exec startplasma-x11" > ~/.xinitrc
+# XRESOURCES
 
 touch ~/.Xresources
 
@@ -115,6 +111,13 @@ Xft.dpi: 96
 Xft.hintstyle: hintmedium
 Xft.hinting: true
 EOF
+
+# XINIT
+
+touch ~/.xinitrc
+
+echo "exec startplasma-x11" > ~/.xinitrc
+echo "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources" >> ~/.xinitrc
 
 # TEMA
 
