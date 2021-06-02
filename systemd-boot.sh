@@ -17,7 +17,7 @@ cat <<EOF > /boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=/dev/sda3 quiet splash loglevel=3
+options root=/dev/sda2 rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3
 EOF
 
 ## REFLECTOR
