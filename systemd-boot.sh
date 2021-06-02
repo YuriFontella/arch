@@ -118,6 +118,16 @@ Xft.hintstyle: hintmedium
 Xft.hinting: true
 EOF
 
+# TEMA 
+
+cat <<EOF > /etc/sddm.conf
+[General]
+EnableHiDPI=false
+
+[Theme]
+CursorTheme=breeze_cursors
+EOF
+
 echo -e "yuri\nyuri" | passwd
 echo -e "yuri\nyuri" | passwd yuri
 
