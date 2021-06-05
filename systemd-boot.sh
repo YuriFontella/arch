@@ -81,7 +81,7 @@ systemctl enable fstrim.timer
 
 # DRIVERS INTEL
 
-pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools xf86-input-evdev gst-libav --noconfirm
+pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools xf86-input-evdev gst-libav --noconfirm
 
 touch /etc/X11/xorg.conf.d/20-intel.conf
 
