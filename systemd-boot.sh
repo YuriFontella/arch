@@ -54,7 +54,7 @@ timedatectl set-ntp true
 
 # DESKTOP
 
-pacman -S xorg-server xorg-xrandr xorg-xinit xorg-xclock xorg-xbacklight xorg-xrdb --noconfirm 
+pacman -S xorg-server xorg-xrandr xorg-xinit xorg-xclock xorg-xbacklight xorg-xrdb xorg-xrefresh xorg-xkill xorg-xgamma --noconfirm 
 
 pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate kcalc ktorrent partitionmanager breeze breeze-icons firefox firefox-i18n-pt-br --noconfirm
 
@@ -81,17 +81,7 @@ systemctl enable fstrim.timer
 
 # DRIVERS INTEL
 
-pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools xf86-input-evdev gst-libav --noconfirm
-
-touch /etc/X11/xorg.conf.d/20-intel.conf
-
-cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
-Section "Device"
-  Identifier "Intel Graphics"
-  Driver "intel"
-  Option "TearFree" "true"
-EndSection
-EOF
+pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools xf86-input-evdev gst-libav --noconfirm
 
 # KERNEL INITRD
 
