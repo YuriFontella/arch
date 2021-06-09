@@ -81,7 +81,7 @@ systemctl enable fstrim.timer
 
 # DRIVERS INTEL
 
-pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools gst-libav --noconfirm
+pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools gst-libav --noconfirm
 
 # KERNEL INITRD
 
@@ -102,12 +102,30 @@ Xft.hintstyle: hintmedium
 Xft.hinting: true
 EOF
 
+# XORG INTEL
+
+touch /etc/X11/xorg.conf.d/20-intel.conf
+
+cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option "TearFree" "true"
+   Option "AccelMethod" "sna"
+EndSection
+EOF
+
 # XINIT
 
 touch ~/.xinitrc
 
 echo "exec startplasma-x11" > ~/.xinitrc
 echo "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources" >> ~/.xinitrc
+
+# FASTBOOT
+
+touch /etc/modprobe.d/i915.conf
+echo "options i915 fastboot=1" > /etc/modprobe.d/i915.conf
 
 # TEMA
 
