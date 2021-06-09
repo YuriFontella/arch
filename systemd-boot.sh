@@ -109,8 +109,8 @@ touch /etc/X11/xorg.conf.d/20-intel.conf
 
 cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
 Section "Device"
-   Identifier  "Intel Graphics"
-   Driver      "intel"
+   Identifier "Intel Graphics"
+   Driver "intel"
    Option "TearFree" "true"
    Option "AccelMethod" "uxa"
 EndSection
