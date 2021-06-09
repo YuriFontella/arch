@@ -30,7 +30,7 @@ reflector --score 5 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 # CONFIGURAÇÃO
 
 touch /etc/hostname
-echo "emcasadormindo" > /etc/hostname
+echo "arch" > /etc/hostname
 
 sed -i -- 's/#pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/g' /etc/locale.gen
 sed -i -- 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
@@ -81,7 +81,7 @@ systemctl enable fstrim.timer
 
 # DRIVERS INTEL
 
-pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools xf86-input-evdev gst-libav --noconfirm
+pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools gst-libav --noconfirm
 
 # KERNEL INITRD
 
