@@ -17,7 +17,8 @@ cat <<EOF > /boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=/dev/sda2 rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 snd_hda_codec_hdmi.enable_silent_stream=0
+options root=/dev/sda2 rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 snd_hda_codec_hdmi.enable_silent_stream=0 i915.semaphores=1
+
 EOF
 
 ## REFLECTOR
@@ -114,6 +115,10 @@ Section "Device"
    Option "AccelMethod" "sna"
 EndSection
 EOF
+
+Xorg :1 -configure
+
+mv xorg.conf.new /etc/X11/xorg.conf
 
 # XINIT
 
