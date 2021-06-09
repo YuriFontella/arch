@@ -112,7 +112,7 @@ Section "Device"
    Identifier  "Intel Graphics"
    Driver      "intel"
    Option "TearFree" "true"
-   Option "AccelMethod" "sna"
+   Option "AccelMethod" "uxa"
 EndSection
 EOF
 
