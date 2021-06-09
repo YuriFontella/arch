@@ -88,10 +88,6 @@ pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa
 
 mkinitcpio -P
 
-# USUÁRIO
-
-useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
-
 # XRESOURCES
 
 touch ~/.Xresources
@@ -144,6 +140,10 @@ EnableHiDPI=false
 Current=breeze
 CursorTheme=breeze_cursors
 EOF
+
+# USUÁRIO
+
+useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
 
 echo -e "yuri\nyuri" | passwd
 echo -e "yuri\nyuri" | passwd yuri
