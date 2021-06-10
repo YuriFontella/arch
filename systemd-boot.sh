@@ -88,24 +88,6 @@ pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vul
 
 mkinitcpio -P
 
-# XRESOURCES
-
-touch ~/.Xresources
-
-cat <<EOF > ~/.Xresources
-Xft.dpi: 96
-
-Xft.hintstyle: hintmedium
-Xft.hinting: true
-EOF
-
-# XINIT
-
-touch ~/.xinitrc
-
-echo "exec startplasma-x11" > ~/.xinitrc
-echo "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources" >> ~/.xinitrc
-
 # FASTBOOT
 
 touch /etc/modprobe.d/i915.conf
@@ -128,8 +110,30 @@ EOF
 
 useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
 
+# XRESOURCES
+
+touch ~/.Xresources
+
+cat <<EOF > ~/.Xresources
+Xft.dpi: 96
+
+Xft.hintstyle: hintmedium
+Xft.hinting: true
+EOF
+
+# XINIT
+
+touch ~/.xinitrc
+
+echo "exec startplasma-x11" > ~/.xinitrc
+echo "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources" >> ~/.xinitrc
+
+# PASSWORD
+
 echo -e "yuri\nyuri" | passwd
 echo -e "yuri\nyuri" | passwd yuri
+
+# SUDO
 
 sed -i -- 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
 
