@@ -11,8 +11,6 @@ editor 1
 console-mode max
 EOF
 
-touch /boot/loader/entries/arch.conf
-
 cat <<EOF > /boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
@@ -31,7 +29,6 @@ reflector --score 5 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 # CONFIGURATION
 
-touch /etc/hostname
 echo "arch" > /etc/hostname
 
 sed -i -- 's/#pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/g' /etc/locale.gen
@@ -39,14 +36,11 @@ sed -i -- 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 
 locale-gen
 
-touch /etc/locale.conf
-
 cat <<EOF > /etc/locale.conf
 LANG=pt_BR.UTF-8
 LANGUAGE=pt_BR
 EOF
 
-touch /etc/vconsole.conf
 echo "KEYMAP=br-abnt2" > /etc/vconsole.conf
 
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
@@ -95,7 +89,6 @@ mkinitcpio -P
 
 # FASTBOOT
 
-touch /etc/modprobe.d/i915.conf
 echo "options i915 fastboot=1" > /etc/modprobe.d/i915.conf
 
 # THEME
