@@ -110,24 +110,6 @@ EOF
 
 useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
 
-# XRESOURCES
-
-touch ~/.Xresources
-
-cat <<EOF > ~/.Xresources
-Xft.dpi: 96
-
-Xft.hintstyle: hintmedium
-Xft.hinting: true
-EOF
-
-# XINIT
-
-touch ~/.xinitrc
-
-echo "exec startplasma-x11" > ~/.xinitrc
-echo "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources" >> ~/.xinitrc
-
 # PASSWORD
 
 echo -e "yuri\nyuri" | passwd
