@@ -117,7 +117,7 @@ useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
 
 # PASSWORD
 
-echo -e "yuri\nyuri" | passwd
+echo -e "root\root" | passwd
 echo -e "yuri\nyuri" | passwd yuri
 
 # SUDO
