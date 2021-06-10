@@ -17,7 +17,7 @@ cat <<EOF > /boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
-options root=/dev/sda2 rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 snd_hda_codec_hdmi.enable_silent_stream=0 i915.semaphores=1
+options root=/dev/sda2 rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 snd_hda_codec_hdmi.enable_silent_stream=0
 
 EOF
 
@@ -59,7 +59,7 @@ pacman -S xorg-server xorg-xrandr xorg-xinit xorg-xclock xorg-xbacklight xorg-xr
 
 pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate kcalc ktorrent partitionmanager breeze breeze-icons firefox firefox-i18n-pt-br --noconfirm
 
-pacman -S sudo colord colord-kde fuse ntfs-3g fstrm packagekit-qt5 xdg-user-dirs --noconfirm
+pacman -S sudo nano bash-completions colord colord-kde fuse ntfs-3g fstrm packagekit-qt5 xdg-user-dirs --noconfirm
 
 pacman -S libappindicator-gtk2 libappindicator-gtk3 --noconfirm
 
@@ -82,7 +82,7 @@ systemctl enable fstrim.timer
 
 # DRIVERS INTEL
 
-pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools gst-libav --noconfirm
+pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools gst-libav --noconfirm
 
 # KERNEL INITRD
 
@@ -98,23 +98,6 @@ Xft.dpi: 96
 Xft.hintstyle: hintmedium
 Xft.hinting: true
 EOF
-
-# XORG INTEL
-
-touch /etc/X11/xorg.conf.d/20-intel.conf
-
-cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
-Section "Device"
-   Identifier "Intel Graphics"
-   Driver "intel"
-   Option "TearFree" "true"
-   Option "AccelMethod" "uxa"
-EndSection
-EOF
-
-Xorg :1 -configure
-
-mv xorg.conf.new /etc/X11/xorg.conf
 
 # XINIT
 
