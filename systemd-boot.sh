@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Installation partition is /dev/sda2
+
 # SYSTEMD BOOT
 
 bootctl install
@@ -110,6 +112,10 @@ EnableHiDPI=false
 Current=breeze
 CursorTheme=breeze_cursors
 EOF
+
+# DISK NAME
+
+e2label /dev/sda2 'Arch Linux'
 
 # USER
 
