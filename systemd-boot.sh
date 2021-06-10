@@ -28,7 +28,7 @@ pacman -S reflector --noconfirm
 
 reflector --score 5 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
-# CONFIGURAÇÃO
+# CONFIGURATION
 
 touch /etc/hostname
 echo "arch" > /etc/hostname
@@ -65,7 +65,7 @@ pacman -S libappindicator-gtk2 libappindicator-gtk3 --noconfirm
 
 pacman -S linux-headers --noconfirm
 
-# FONTES
+# FONTS
 
 pacman -S ttf-dejavu ttf-liberation --noconfirm
 
@@ -73,7 +73,7 @@ pacman -S ttf-dejavu ttf-liberation --noconfirm
 
 pacman -S bluez pulseaudio-bluetooth --noconfirm
 
-# SERVIÇOS
+# SERVICES
 
 systemctl enable sddm
 systemctl enable NetworkManager
@@ -93,7 +93,7 @@ mkinitcpio -P
 touch /etc/modprobe.d/i915.conf
 echo "options i915 fastboot=1" > /etc/modprobe.d/i915.conf
 
-# TEMA
+# THEME
 
 sddm-greeter --theme /usr/share/sddm/themes
 
@@ -106,7 +106,7 @@ Current=breeze
 CursorTheme=breeze_cursors
 EOF
 
-# USUÁRIO
+# USER
 
 useradd -m -g users -G wheel,storage,power,video -s /bin/bash yuri
 
