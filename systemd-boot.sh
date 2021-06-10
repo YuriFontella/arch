@@ -80,6 +80,10 @@ systemctl enable NetworkManager
 systemctl enable bluetooth
 systemctl enable fstrim.timer
 
+# BALOO
+
+balooctl disable
+
 # DRIVERS INTEL
 
 pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools gst-libav --noconfirm
