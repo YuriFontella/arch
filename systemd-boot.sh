@@ -82,7 +82,7 @@ balooctl disable
 
 # DRIVERS INTEL
 
-pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools gst-libav --noconfirm
+pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools virtualgl lb32-virtualgl gst-libav --noconfirm
 
 cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
 Section "Device"
