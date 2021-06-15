@@ -84,6 +84,8 @@ balooctl disable
 
 pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools virtualgl lb32-virtualgl gst-libav --noconfirm
 
+pacman -S xf86-input-libinput  xf86-video-fbdev xf86-video-vesa --noconfirm
+
 cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
 Section "Device"
   Identifier "Intel Graphics"
