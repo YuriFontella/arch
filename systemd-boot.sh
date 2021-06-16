@@ -91,6 +91,8 @@ Section "Device"
   Identifier "Intel Graphics"
   Driver "intel"
   Option "TearFree" "true"
+  Option "DRI" "3"
+  Option "AccelMethod" "sna"
 EndSection
 EOF
 
