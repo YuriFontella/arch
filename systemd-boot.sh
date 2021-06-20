@@ -23,10 +23,10 @@ EOF
 
 ## REFLECTOR
 
-pacman -Sy
-pacman -S reflector --noconfirm
+# pacman -Sy
+# pacman -S reflector --noconfirm
 
-reflector --score 5 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --score 5 --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 
 # CONFIGURATION
 
@@ -47,6 +47,7 @@ echo "KEYMAP=br-abnt2" > /etc/vconsole.conf
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 
 hwclock --utc --systohc
+
 timedatectl set-ntp true
 
 # DESKTOP
@@ -67,13 +68,13 @@ pacman -S ttf-dejavu ttf-liberation --noconfirm
 
 # BLUETOOTH
 
-pacman -S bluez pulseaudio-bluetooth --noconfirm
+# pacman -S bluez pulseaudio-bluetooth --noconfirm
 
 # SERVICES
 
 systemctl enable sddm
 systemctl enable NetworkManager
-systemctl enable bluetooth
+# systemctl enable bluetooth
 systemctl enable fstrim.timer
 
 # BALOO
@@ -82,19 +83,9 @@ balooctl disable
 
 # DRIVERS INTEL
 
-pacman -S xf86-video-intel intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools virtualgl lb32-virtualgl gst-libav --noconfirm
+pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools virtualgl lb32-virtualgl gst-libav --noconfirm
 
-pacman -S xf86-input-libinput  xf86-video-fbdev xf86-video-vesa --noconfirm
-
-cat <<EOF > /etc/X11/xorg.conf.d/20-intel.conf
-Section "Device"
-  Identifier "Intel Graphics"
-  Driver "intel"
-  Option "TearFree" "true"
-  Option "DRI" "3"
-  Option "AccelMethod" "sna"
-EndSection
-EOF
+pacman -S xf86-input-libinput xf86-video-fbdev xf86-video-vesa --noconfirm
 
 # KERNEL INITRD
 
