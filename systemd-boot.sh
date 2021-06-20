@@ -64,7 +64,7 @@ pacman -S xorg-server xorg-xrandr xorg-xinit xorg-xclock xorg-xbacklight xorg-xr
 
 pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate kcalc ktorrent partitionmanager breeze breeze-icons firefox firefox-i18n-pt-br --noconfirm
 
-pacman -S sudo nano bash-completions colord colord-kde fuse ntfs-3g fstrm packagekit-qt5 xdg-user-dirs --noconfirm
+pacman -S sudo nano bash-completion colord colord-kde fuse ntfs-3g fstrm packagekit-qt5 xdg-user-dirs --noconfirm
 
 pacman -S libappindicator-gtk2 libappindicator-gtk3 --noconfirm
 
