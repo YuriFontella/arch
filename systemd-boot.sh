@@ -91,7 +91,7 @@ balooctl disable
 
 # DRIVERS INTEL
 
-pacman -S intel-ucode libva-intel-driver libva-mesa-driver mesa vulkan-intel vulkan-tools virtualgl lb32-virtualgl libva-mesa-driver gst-libav --noconfirm
+pacman -S intel-ucode libva-intel-driver lib32-libva-intel-driver libva-mesa-driver lib32-libva-mesa-driver mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-tools virtualgl lb32-virtualgl gst-libav --noconfirm
 
 pacman -S xf86-input-libinput xf86-video-fbdev xf86-video-vesa --noconfirm
 
