@@ -132,5 +132,3 @@ echo -e "yuri\nyuri" | passwd yuri
 # SUDO
 
 sed -i -- 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
-
-cd .. && rm -rf arch
