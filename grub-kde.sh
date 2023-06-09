@@ -34,7 +34,7 @@ timedatectl set-ntp true
 
 # DESKTOP
 
-pacman -S plasma-desktop plasma-meta sddm sddm-kcm dolphin konsole ark gwenview okular spectacle elisa kate firefox firefox-i18n-pt-br xdg-user-dirs sudo --noconfirm
+pacman -S plasma-desktop plasma-meta sddm sddm-kcm xdg-user-dirs sudo dolphin konsole ark gwenview okular kcalc spectacle elisa kwrite kate partitionmanager kolourpaint vlc firefox --noconfirm
 
 # sddm-greeter --theme /usr/share/sddm/themes/breeze
 
